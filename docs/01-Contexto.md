@@ -57,12 +57,12 @@ Além disso, o projeto também se justifica por estar alinhado com os Objetivos 
 
 O público-alvo do sistema pode ser dividido em diferentes perfis:
 * Visitantes gerais: Indivíduos da comunidade ou de fora dela que acessam o site para conhecer o projeto, seus cursos e atividades.
- * Perfil: Curiosos, familiares de atendidos, possíveis doadores; domínio básico de tecnologia.
+        * Perfil: Curiosos, familiares de atendidos, possíveis doadores; domínio básico de tecnologia.
 * Voluntários potenciais: Pessoas interessadas em colaborar com o projeto.
- * Perfil: Jovens e adultos com motivação social, uso moderado a avançado de tecnologia.
+        * Perfil: Jovens e adultos com motivação social, uso moderado a avançado de tecnologia.
 * Doadores: Pessoas físicas ou jurídicas dispostas a contribuir financeiramente.
- * Perfil: Pessoas com acesso à internet e interesse em impacto social, que buscam segurança e transparência nas informações.
+        * Perfil: Pessoas com acesso à internet e interesse em impacto social, que buscam segurança e transparência nas informações.
 * Equipe administrativa da Mucuri: Funcionários ou colaboradores responsáveis pelo cadastro e gerenciamento dos dados.
- * Perfil: Usuários com experiência prática, mas muitas vezes sem formação técnica em TI.
+        * Perfil: Usuários com experiência prática, mas muitas vezes sem formação técnica em TI.
 * Gestores técnicos: Profissionais internos ou externos que cuidam da manutenção do sistema.
- * Perfil: Usuários com domínio técnico em TI e infraestrutura.
+        * Perfil: Usuários com domínio técnico em TI e infraestrutura.
