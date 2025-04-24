@@ -8,19 +8,16 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Exemplo: _Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente por meio de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros._
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links úteis**:
-> - [Rock content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+1. João Batista – Visitante Público
+João tem 45 anos, é pedreiro, mora em Contagem e ouviu falar da Mucuri por meio de um vizinho. Ele gostaria de saber mais sobre os cursos oferecidos pela instituição para recomendar à filha adolescente. João usa o celular para acessar redes sociais e notícias, mas não tem familiaridade com navegação em sites complexos.
+2. Ana Clara – Voluntária Potencial
+Ana tem 22 anos, é estudante de Psicologia e quer dedicar parte do seu tempo a causas sociais. Acredita na transformação por meio da educação e está à procura de oportunidades para atuar como voluntária. É ativa nas redes sociais e tem bom domínio de tecnologia.
+3. Marcos Vinícius – Doador
+Marcos tem 38 anos, é gerente de marketing em uma empresa de médio porte e busca projetos sociais confiáveis para apoiar. Quer fazer doações com segurança, acompanhar resultados e entender melhor o impacto gerado. Acessa frequentemente sites institucionais e é exigente com transparência.
+4. Luciana Rocha – Administradora da Instituição
+Luciana tem 40 anos, é coordenadora administrativa da Mucuri há 6 anos. Ela organiza os cursos, eventos e inscrições de voluntários. Sente dificuldade em atualizar o banco de dados e depende de planilhas e documentos impressos. Tem conhecimento básico em informática.
+5. Rafael Moura – Gestor Técnico
+Rafael é voluntário e também atua como consultor de TI. Ele oferece suporte técnico à Mucuri e está ajudando na transição para a nova plataforma. Tem profundo conhecimento em infraestrutura, banco de dados e segurança da informação.
 
 ## Histórias de usuários
 
@@ -28,17 +25,16 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuários que são relevantes para o projeto da sua solução. As histórias de usuários consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuários por contexto, para facilitar consultas recorrentes a esta parte do documento.
-
-> **Links úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (user stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 common user story mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Visitante           | Ver informações sobre a instituição|Conhecer melhor a Mucuri e seus projetos|
+|Visitante           | Acessar cursos e eventos           |Acompanhar oportunidades de capacitação |
+|Voluntário          |Preencher formulário de inscrição   |Me candidatar às vagas de voluntariado  |
+|Voluntário          |Acompanhar informações e notícias   |Me manter atualizado sobre a instituição|
+|Doador              |Ver opções de doação                |Contribuir com a causa da Mucuri        |
+|Doador              |Ter confiança nas infos do site     |Saber que a doação está sendo utilizada |
+|Administrador       |Gerenciar associados                |Manter a base de dados organizada       |
+|Administrador       | Acessar painel restrito            |Realizar tarefas administrativas seguras|
+|Gestor Técnico      | Manter o sistema atualizado        |Garantir segurança e desempenho         |
+|Gestor Técnico      |Ter acesso à base de dados          |Corrigir erros e gerir a infraestrutura |
 
 ## Requisitos
 
