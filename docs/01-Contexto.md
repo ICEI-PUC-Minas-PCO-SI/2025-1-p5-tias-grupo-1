@@ -1,51 +1,68 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto. Visando contextualizar melhor o projeto e destacar sua importância para a disciplina, que é **extensionista**, acrescente todas as informações relevantes que julgar necessárias.
+Este projeto de software tem como objetivo principal fortalecer a presença digital e a capacidade de gestão da instituição Mucuri – Projeto Social, organização sem fins lucrativos que atua desde 1990 na cidade de Contagem-MG, prestando serviços à comunidade de baixa renda por meio de cursos profissionalizantes, atividades educativas e ações sociais.
+
+O contexto do projeto surgiu a partir da constatação de que a instituição enfrenta dificuldades em sua comunicação digital e na gestão de seus dados internos. Sua única presença digital ativa atualmente se dá por meio de uma conta no Instagram, uma vez que a página no Facebook foi hackeada e desativada. Além disso, o banco de dados interno, conhecido como “Castor”, tem apresentado lentidão e perdas recorrentes de informações, impactando negativamente na gestão da instituição.
+
+A proposta do projeto envolve a criação de um site institucional moderno e acessível, e a reestruturação da plataforma de gestão de associados. O site permitirá a divulgação clara de sua missão, projetos, formas de contato, meios de doação e inscrição para voluntariado, enquanto a plataforma administrativa visa melhorar a organização e o controle dos dados internos.
+
+Por tratar-se de um projeto extensionista, a iniciativa também promove a interação entre os estudantes universitários e a comunidade local, possibilitando a aplicação prática dos conhecimentos adquiridos na graduação e contribuindo para o desenvolvimento sustentável e a cidadania ativa.
 
 ## Cliente 
-Nesta seção, devem ser apresentadas informações essenciais sobre o cliente (parceiro) para garantir um entendimento mais preciso do projeto como uma iniciativa extensionista.  
+A organização parceira deste projeto é o Mucuri – Projeto Social, instituição que atua há mais de três décadas no município de Contagem/MG. Seu trabalho é voltado à inclusão social e ao desenvolvimento de famílias em situação de vulnerabilidade, especialmente por meio de cursos de qualificação profissional e atividades de apoio à comunidade.
 
-Recomenda-se incluir dados como missão, visão e valores da organização, além de seu ramo de atuação, porte, nicho de mercado e principais desafios enfrentados. Também é relevante fornecer informações sobre sua localização, histórico, impacto social e possíveis demandas específicas. Quanto mais detalhadas forem essas informações, mais embasada será a análise do contexto, permitindo uma abordagem estratégica e alinhada às necessidades do cliente.
+* Missão: Promover a inclusão e transformação social por meio da educação, da capacitação profissional e da solidariedade.
+* Visão: Ser reconhecida como referência em impacto social local e inclusão cidadã.
+* Valores: Comprometimento, empatia, solidariedade, transparência e inclusão.
+
+A instituição atua no terceiro setor e depende de doações, trabalho voluntário e parcerias para manter suas atividades. Seu impacto social é significativo, pois atende moradores da região com ações que buscam romper ciclos de pobreza.
+
+Entre os principais desafios enfrentados estão:
+* Baixa presença digital;
+* Falta de uma plataforma centralizada para comunicação e gestão de dados;
+* Dificuldade em alcançar voluntários e doadores;
+* Banco de dados lento e propenso a falhas.
 
 ## Problema
-Aqui, a equipe deve fornecer uma descrição detalhada do problema a ser resolvido. Não é o momento adequado para abordar questões técnicas relacionadas ao desenvolvimento da aplicação. O objetivo é compreender e comunicar de maneira precisa qual é o desafio ou necessidade que motiva a criação da aplicação.
+A instituição Mucuri – Projeto Social enfrenta duas frentes principais de problemas:
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+1. Presença digital limitada: A instituição possui apenas um perfil ativo no Instagram, o que restringe sua visibilidade e dificulta o contato com o público, captação de doações e inscrições para voluntariado.
+2. Sistema de dados ineficiente: O banco de dados atual, denominado "Castor", sofre com lentidão e falhas de armazenamento, prejudicando a organização das informações e o desempenho das atividades administrativas.
 
-O grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite uma visão completa do problema.
+Esses problemas impedem a instituição de se comunicar adequadamente com a sociedade e prejudicam a gestão de suas ações sociais.
 
-> **Links úteis**:
-> - [Objetivos, problema de pesquisa e justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz certezas, suposições e dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+A aplicação será utilizada tanto pelo público externo (visitantes, doadores e voluntários) quanto pela equipe administrativa da Mucuri. O novo sistema digital proposto será acessível via web, responsivo e construído com tecnologias modernas como ASP.NET Core Web API (back-end), React.js (front-end) e banco de dados SQL Server.
 
 ## Objetivos
 
-Aqui, você deve descrever os objetivos do trabalho, indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima.
+Objetivo Geral
+Desenvolver um site institucional e uma plataforma administrativa para a instituição Mucuri, com o intuito de modernizar sua presença digital, facilitar o acesso à informação e melhorar a eficiência na gestão de dados internos.
 
-Além disso, apresente alguns (pelo menos 3) objetivos específicos, dependendo de onde você pretende concentrar sua prática investigativa ou como deseja aprofundar seu trabalho.
- 
-> **Links úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Objetivos Específicos:
+1. Criar um site responsivo e acessível para divulgação de informações institucionais, projetos e ações.
+2. Disponibilizar formulários de inscrição para voluntariado e opções de doação online.
+3. Reestruturar e otimizar o banco de dados "Castor", garantindo desempenho e segurança.
+4. Implementar uma área administrativa para cadastro e gerenciamento de associados, cursos e eventos.
+5. Promover integração com redes sociais para maior alcance e visibilidade.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A criação de uma solução tecnológica para a Mucuri é essencial para garantir sua continuidade e aumentar seu impacto social. A ausência de um canal oficial e funcional de comunicação compromete tanto a transparência quanto a captação de recursos.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Durante visitas e entrevistas com membros da instituição, identificaram-se problemas práticos que dificultam o alcance e o engajamento do público-alvo, bem como a organização interna. A proposta do projeto responde diretamente a essas necessidades, permitindo que a instituição mantenha uma comunicação clara com a comunidade e fortaleça sua gestão.
 
-> **Links úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Além disso, o projeto também se justifica por estar alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) da ONU, como erradicação da pobreza, educação de qualidade, redução das desigualdades e parcerias para implementação.
 
 ## Público-alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público-alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O público-alvo do sistema pode ser dividido em diferentes perfis:
+* Visitantes gerais: Indivíduos da comunidade ou de fora dela que acessam o site para conhecer o projeto, seus cursos e atividades.
+ * Perfil: Curiosos, familiares de atendidos, possíveis doadores; domínio básico de tecnologia.
+* Voluntários potenciais: Pessoas interessadas em colaborar com o projeto.
+ * Perfil: Jovens e adultos com motivação social, uso moderado a avançado de tecnologia.
+* Doadores: Pessoas físicas ou jurídicas dispostas a contribuir financeiramente.
+ * Perfil: Pessoas com acesso à internet e interesse em impacto social, que buscam segurança e transparência nas informações.
+* Equipe administrativa da Mucuri: Funcionários ou colaboradores responsáveis pelo cadastro e gerenciamento dos dados.
+ * Perfil: Usuários com experiência prática, mas muitas vezes sem formação técnica em TI.
+* Gestores técnicos: Profissionais internos ou externos que cuidam da manutenção do sistema.
+ * Perfil: Usuários com domínio técnico em TI e infraestrutura.
