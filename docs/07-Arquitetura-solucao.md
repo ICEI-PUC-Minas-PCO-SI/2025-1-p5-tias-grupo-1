@@ -103,10 +103,10 @@ Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](.
 
 ## Hospedagem
 
-###Back-end
+### Back-end
 Hospedado na plataforma Microsoft Azure
 
-###Front-end
+### Front-end
 Publicado utilizando Vercel
 
 ## Qualidade de software
