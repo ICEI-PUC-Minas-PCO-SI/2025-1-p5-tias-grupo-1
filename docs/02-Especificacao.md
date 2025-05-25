@@ -44,8 +44,17 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| Exibir informações da instituição | ALTA | 
+|RF-002| Apresentar informações detalhadas sobre cursos e eventos   | ALTA |
+|RF-003| Exibir instruções e disponibilizar formulário para doação   | ALTA |
+|RF-004| Disponibilizar formulário para voluntários   | ALTA |
+|RF-005| Administrar associados da instituição   | ALTA |
+|RF-006| Exibir informaçoes de contato e redes sociais   | ALTA |
+|RF-007| Apresentar informações detalhadas sobre cursos e eventos   | ALTA |
+|RF-008| Permitir que adminsitradores gerenciem conteúdos e cadastros   | ALTA |
+|RF-009| Integração com redes sociais   | MÉDIA |
+
+
 
 ### Requisitos não funcionais
 
