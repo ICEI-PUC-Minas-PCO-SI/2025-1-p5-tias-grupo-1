@@ -84,7 +84,7 @@ O projeto está restrito aos itens apresentados na tabela a seguir.
 
 ## Diagrama de casos de uso
 
-Imagem
+![Especificacao](images/casodeuso.png)
 
 As referências abaixo irão auxiliá-lo na geração do artefato “diagrama de casos de uso”.
 
