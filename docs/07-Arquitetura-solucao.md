@@ -111,7 +111,7 @@ Publicado utilizando Vercel
 
 ## ✅ Qualidade de Software
 
-A qualidade do software foi baseada no modelo definido pela norma **ISO/IEC 25010**, que especifica características e subcaracterísticas que devem ser observadas no desenvolvimento de sistemas com foco na satisfação do usuário e na confiabilidade do produto.
+A qualidade do software especifica características e subcaracterísticas que devem ser observadas no desenvolvimento de sistemas com foco na satisfação do usuário e na confiabilidade do produto.
 
 ### 🎯 Subcaracterísticas Adotadas
 
