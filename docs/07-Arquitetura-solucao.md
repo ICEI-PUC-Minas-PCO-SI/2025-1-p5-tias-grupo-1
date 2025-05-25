@@ -109,15 +109,22 @@ Hospedado na plataforma Microsoft Azure
 ### Front-end
 Publicado utilizando Vercel
 
-## Qualidade de software
+## ✅ Qualidade de Software
 
-Conceituar qualidade é uma tarefa complexa, mas ela pode ser vista como um método gerencial que, por meio de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+A qualidade do software foi baseada no modelo definido pela norma **ISO/IEC 25010**, que especifica características e subcaracterísticas que devem ser observadas no desenvolvimento de sistemas com foco na satisfação do usuário e na confiabilidade do produto.
 
-No contexto do desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem atendidas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, esse nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+### 🎯 Subcaracterísticas Adotadas
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software. Com base nessas características e nas respectivas subcaracterísticas, identifique as subcaracterísticas que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software, considerando alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão à equipe avaliar os objetos de interesse.
+| Característica     | Subcaracterística        | Justificativa |
+|--------------------|--------------------------|----------------|
+| **Usabilidade**    | Apreensibilidade         | Interface intuitiva para facilitar o aprendizado dos usuários da instituição Mucuri. |
+| **Confiabilidade** | Maturidade               | Redução de falhas por meio de testes internos rigorosos antes da implantação. |
+| **Eficiência de Desempenho** | Tempo de Resposta | Monitoramento ativo do tempo de resposta durante a fase inicial de produção. |
+| **Manutenibilidade** | Modularidade           | Arquitetura modular facilita a manutenção, correção de bugs e evolução da aplicação. |
 
-> **Links úteis**:
-> - [ISO/IEC 25010:2011 - Systems and Software Engineering — Systems and Software Quality Requirements and Evaluation (SQuaRE) — System and Software Quality Models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de software - Engenharia de Software](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209)
+### 📏 Métricas para Avaliação da Qualidade
+
+- ⏱️ **Tempo médio de resposta** por requisição.
+- ❌ **Taxa de erros/falhas** reportadas semanalmente.
+- 🛠️ **Tempo médio de resolução** de bugs.
+- 📊 **Índice de satisfação** dos usuários após o treinamento (via formulário de feedback).
