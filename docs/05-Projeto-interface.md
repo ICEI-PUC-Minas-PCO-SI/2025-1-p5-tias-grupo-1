@@ -1,80 +1,95 @@
+# Projeto de Interface
 
-# Projeto de interface
+> 📎 Pré-requisitos: [Especificação do projeto](02-Especificacao.md)
 
-<span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
+Este módulo apresenta a visão geral da **interação do usuário com o sistema**, por meio do fluxo de navegação, wireframes e protótipos desenvolvidos com foco na **usabilidade, acessibilidade e clareza da informação**.
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
+As interfaces foram desenhadas com base nos requisitos funcionais e não funcionais definidos, considerando também os perfis dos usuários descritos nas histórias de usuário.
 
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados na <a href="02-Especificacao.md"> Especificação do projeto</a></span>.
+---
 
- ## User flow
+## 🧭 User Flow
 
-Fluxo de usuário (user flow) é uma técnica que permite ao desenvolvedor mapear todo o fluxo de navegação do usuário na aplicação. Essa técnica serve para alinhar os caminhos e as possíveis ações que o usuário pode realizar junto com os membros da equipe.
+O **fluxo de usuário** (user flow) representa o caminho percorrido pelos diferentes perfis ao interagir com o sistema. Ele permite prever e alinhar as ações possíveis dentro da aplicação.
 
-![Exemplo de user flow](images/user_flow.jpg)
+![User Flow do Projeto](images/user_flow.jpg)
 
-> **Links úteis**:
-> - [User flow: o quê é e como fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User flow vs site maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 user flow tools & templates for smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+> O user flow foi definido com base nas rotas principais: acesso público ao site, visualização de informações institucionais, formulário de voluntariado, área de doações e painel administrativo para usuários autenticados.
 
-### Diagrama de fluxo
+---
 
-O diagrama apresenta o estudo do fluxo de interação do usuário com o sistema interativo, muitas vezes sem a necessidade de desenhar o design das telas da interface. Isso permite que o design das interações seja bem planejado e tenha impacto na qualidade do design do wireframe interativo que será desenvolvido logo em seguida.
+## 🔄 Diagrama de Fluxo
 
-O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem, internamente, a indicação dos principais elementos de interface — tais como menus e acessos — e funcionalidades, como editar, pesquisar, filtrar e configurar, além da conexão entre esses boxes a partir do processo de interação.
+O **diagrama de fluxo de interação** descreve as conexões entre as funcionalidades principais do sistema, antes mesmo da definição visual das interfaces. Esse diagrama contribuiu para o planejamento da hierarquia entre as páginas e interações de forma eficiente.
 
-![Exemplo de diagrama de fluxo](images/diagrama_fluxo.jpg)
+![Diagrama de Fluxo](images/diagrama_fluxo.jpg)
 
-> **Links úteis**:
-> - [Como criar um diagrama de fluxo de usuário](https://www.lucidchart.com/blog/how-to-make-a-user-flow-diagram)
-> - [Fluxograma online: seis sites para fazer gráfico sem instalar nada](https://www.techtudo.com.br/listas/2019/03/fluxograma-online-seis-sites-para-fazer-grafico-sem-instalar-nada.ghtml)
+> Os fluxos foram organizados em torno de três pilares: navegação pública, funcionalidades administrativas e integrações de back-end.
 
-## Wireframes
+---
 
-São protótipos usados no design de interface para sugerir a estrutura de um site web e seu relacionamento entre suas páginas. Um wireframe web é uma ilustração que mostra o layout dos elementos fundamentais na interface.
+## 📐 Wireframes
 
-![Exemplo de wireframe](images/wireframe.png)
- 
-> **Links úteis**:
-> - [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135)
-> - [Protótipos vs wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+Os **wireframes** foram utilizados para mapear a estrutura das páginas da aplicação. Os protótipos foram desenvolvidos no Figma, com foco em responsividade, clareza visual e acessibilidade (WCAG 2.1).
 
+![Wireframe](images/wireframe.png)
 
-## Interface do sistema
+A estrutura foi pensada para atender usuários com diferentes níveis de familiaridade digital, garantindo navegação fluida tanto em dispositivos móveis quanto em desktop.
 
-Visão geral da interação do usuário por meio das telas do sistema. Apresente as principais interfaces da plataforma em sua versão final.
+- Protótipos disponíveis no Figma:  
+[🔗 Acessar Protótipo Interativo](https://www.figma.com/design/HGYbs8drjvyoYrVpfO0soK/Projeto-Mucuri-Template)
 
-### Tela principal do sistema
+---
 
-Descrição da tela principal do sistema.
+## 💻 Interface do Sistema
 
-> Insira aqui a tela principal do sistema
+As interfaces finais foram construídas com base nos wireframes, respeitando os requisitos e refletindo os fluxos definidos.
 
+### 🏠 Tela Principal
 
-###  Telas do processo 1
+A tela inicial apresenta um resumo da instituição, chamada para doações e botões de acesso aos menus “Cursos”, “Voluntariado” e “Fale Conosco”.
 
-Descrição da tela relativa à atividade 1 do processo 1.
+> ![Tela Principal](images/tela_principal.png)
 
-> Insira aqui a tela da atividade 1
+---
 
-Descrição da tela relativa à atividade 2 do processo 1.
+### 🧑‍🤝‍🧑 Telas do Processo 1 – Captação de Voluntários
 
-> Insira aqui a tela da atividade 2
+#### 📝 Formulário de Inscrição
 
+Tela onde o voluntário preenche seu nome, área de interesse e dados de contato.
 
-### Telas do processo 2
+> ![Tela de Inscrição de Voluntário](images/tela_inscricao_voluntario.png)
 
-Descrição da tela relativa à atividade 1 do processo 2.
+#### 📄 Confirmação de Envio
 
-> Insira aqui a tela da atividade 1
+Tela de confirmação após o envio do formulário de voluntariado.
 
-Descrição da tela relativa à atividade 2 do processo 2.
+> ![Tela de Confirmação](images/tela_confirmacao_voluntario.png)
 
-> Insira aqui a tela da atividade 2
+---
+
+### 💰 Telas do Processo 2 – Registro de Doações
+
+#### 💸 Página de Doações
+
+Tela com instruções para doações e botão de formulário de contato.
+
+> ![Tela de Doações](images/tela_doacoes.png)
+
+#### 📥 Formulário de Contato para Doação
+
+Usuário pode inserir nome, valor ou tipo de doação, e mensagem.
+
+> ![Tela de Formulário de Doações](images/tela_formulario_doacoes.png)
+
+---
+
+## 📚 Referências úteis
+
+- [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135)
+- [Figma](https://www.figma.com/)
+- [Axure](https://www.axure.com/edu)
+- [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
+- [User flow: o que é e como fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
+- [Como criar um diagrama de fluxo de usuário](https://www.lucidchart.com/blog/how-to-make-a-user-flow-diagram)
