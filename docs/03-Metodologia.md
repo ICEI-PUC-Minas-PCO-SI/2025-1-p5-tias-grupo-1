@@ -1,122 +1,103 @@
-
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
+> 📎 Pré-requisitos: [Especificação do projeto](02-Especificacao.md)
 
-Descreva aqui a metodologia de trabalho do grupo para abordar o problema. Inclua definições sobre os ambientes de trabalho utilizados pela equipe para desenvolver o projeto. Isso abrange a relação dos ambientes utilizados, a estrutura para a gestão do código-fonte, além da definição do processo e das ferramentas por meio dos quais a equipe se organiza (gestão de equipes).
+O desenvolvimento do projeto foi baseado em uma metodologia ágil, utilizando o framework **Scrum** adaptado para fins acadêmicos. A equipe se organizou em **Sprints quinzenais**, com papéis rotativos e entregas incrementais. O GitHub foi a ferramenta central para controle de versão, documentação, organização de tarefas e acompanhamento do progresso.
 
+---
 
-## Controle de versão
+## Controle de Versão
 
-A ferramenta de controle de versão adotada no projeto foi o [Git](https://git-scm.com/), sendo que o [GitHub](https://github.com) foi utilizado para hospedagem do repositório.
+A ferramenta de versionamento utilizada foi o [Git](https://git-scm.com/), com repositório hospedado no [GitHub](https://github.com/ICEI-PUC-Minas-PCO-SI/2025-1-p5-tias-grupo-1).
 
-O projeto segue a seguinte convenção para o nome de branches:
+### 📁 Branches
 
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+- `main`: versão estável em produção
+- `dev`: versão de desenvolvimento contínuo
+- `feature/*`: novas funcionalidades
+- `hotfix/*`: correções emergenciais
+- `docs`: documentação do projeto
 
-Quanto à gerência de issues, o projeto adota a seguinte convenção para etiquetas:
+### 📝 Padrão de commits
 
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
+- `feat:` nova funcionalidade
+- `fix:` correção de bug
+- `docs:` alterações na documentação
+- `style:` ajustes de formatação
+- `refactor:` refatorações de código
+- `test:` criação ou modificação de testes
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gestão de tags, merges, commits e branches é realizada. Discuta também como a gestão de issues foi feita.
+### 🧩 Gestão de Issues
 
-> **Links úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e GitHub](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-> - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+- `feature`: nova funcionalidade
+- `bug`: erro ou falha no sistema
+- `enhancement`: melhoria de uma funcionalidade existente
+- `documentation`: ajustes na documentação
+- `question`: dúvidas/discussões
 
-## Planejamento do projeto
+As tarefas foram organizadas usando o recurso **GitHub Projects**, com as colunas: `Backlog`, `Em andamento`, `Revisão` e `Concluído`.
 
-###  Divisão de papéis
+---
 
-> Apresente a divisão de papéis entre os membros do grupo em cada Sprint. O desejável é que, em cada Sprint, o aluno assuma papéis diferentes na equipe. Siga o modelo do exemplo abaixo:
+## Planejamento do Projeto
 
-#### Sprint 1
-- _Scrum master_: AlunaX
-- Protótipos: AlunoY
-- Testes: AlunoK
-- Documentação: AlunaZ
-
-#### Sprint 2
-- _Scrum master_: AlunaY
-- Desenvolvedor _front-end_: AlunoX
-- Desenvolvedor _back-end_: AlunoK
-- Testes: AlunaZ
-
-###  Quadro de tarefas
-
-> Apresente a divisão de tarefas entre os membros do grupo e o acompanhamento da execução, conforme o exemplo abaixo.
+### 🔄 Divisão de papéis
 
 #### Sprint 1
-
-Atualizado em: 21/04/2024
-
-| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
-| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Introdução | 01/02/2024     | 07/02/2024 | ✔️    | 05/02/2024      |
-| AlunaZ        | Objetivos    | 03/02/2024     | 10/02/2024 | 📝    |                 |
-| AlunoY        | Histórias de usuário  | 01/01/2024     | 07/01/2005 | ⌛     |                 |
-| AlunoK        | Personas 1  |    01/01/2024        | 12/02/2005 | ❌    |       |
+- *Scrum Master*: Arthur
+- Prototipação (Figma): Natalia
+- Requisitos e documentação: Derick
+- Modelagem de dados: Vinícius
+- Front-end inicial: Matheus
+- Back-end inicial: André
 
 #### Sprint 2
+- *Scrum Master*: Derick
+- Front-end (React): Arthur e Matheus
+- Back-end (API): André
+- Banco de dados e autenticação: Vinícius
+- Documentação técnica: Natalia
 
-Atualizado em: 21/04/2024
+---
 
-| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
-| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Página inicial   | 01/02/2024     | 07/03/2024 | ✔️    | 05/02/2024      |
-| AlunaZ        | CSS unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
+### 📋 Quadro de Tarefas
 
+**Atualizado em: 10/06/2025**
 
-Legenda:
-- ✔️: terminado
+| Responsável | Tarefa / Requisito                  | Iniciado em | Prazo     | Status | Concluído em |
+|-------------|-------------------------------------|-------------|-----------|--------|--------------|
+| Derick      | Modelagem base de dados + ER        | 20/05/2025  | 30/05/2025| ✔️     | 28/05/2025   |
+| Arthur      | Página inicial do site              | 22/05/2025  | 05/06/2025| 📝     |              |
+| Vinícius    | API de login e autenticação (JWT)   | 25/05/2025  | 10/06/2025| ✔️     | 09/06/2025   |
+| Natalia     | Prototipação no Figma               | 15/05/2025  | 25/05/2025| ✔️     | 23/05/2025   |
+| Matheus     | Página de doações                   | 01/06/2025  | 15/06/2025| ⌛     |              |
+| André       | Integração API + SQL Server         | 28/05/2025  | 12/06/2025| 📝     |              |
+
+**Legenda**:
+- ✔️: concluído
 - 📝: em execução
 - ⌛: atrasado
 - ❌: não iniciado
 
+---
 
-> **Links úteis**:
-> - [11 passos essenciais para implantar Scrum no seu projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
+## 🌀 Processo Scrum
 
-### Processo
+- Sprints quinzenais
+- Reuniões semanais de acompanhamento
+- Tarefas registradas e organizadas via *GitHub Projects*
+- Código versionado com revisões por *pull requests*
+- Comunicação via WhatsApp e GitHub Issues
 
-Coloque informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links úteis**:
-> - [Planejamento e gestão ágil de projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Como criar backlogs no GitHub](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial slack](https://slack.com/intl/en-br/)
+---
 
+## Relação de Ambientes de Trabalho
 
-## Relação de ambientes de trabalho
-
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas. Todos os ambientes e frameworks utilizados no desenvolvimento da aplicação estão listados na seção abaixo.
-
-### Ferramentas
-
-Liste todas as ferramentas que foram empregadas no projeto, justificando a escolha delas, sempre que possível.
-
-Exemplo: os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
-
-| Ambiente                            | Plataforma                         | Link de acesso                         |
-|-------------------------------------|------------------------------------|----------------------------------------|
-| Repositório de código fonte         | GitHub                             | http://....                            |
-| Documentos do projeto               | GitHub                             | http://....                            |
-| Projeto de interface                | Figma                              | http://....                            |
-| Gerenciamento do projeto            | GitHub Projects                    | http://....                            |
-| Hospedagem                          | Vercel                             | http://....                            |
- 
+| Ambiente                            | Plataforma                         | Link de acesso                                                                 |
+|-------------------------------------|------------------------------------|--------------------------------------------------------------------------------|
+| Repositório de código fonte         | GitHub                             | [Repositório GitHub](https://github.com/ICEI-PUC-Minas-PCO-SI/2025-1-p5-tias-grupo-1) |
+| Documentação do projeto             | GitHub Wiki / Markdown             | Mesmo link acima                                                              |
+| Projeto de interface (protótipos)  | Figma                              | [Protótipos Figma](https://www.figma.com/design/HGYbs8drjvyoYrVpfO0soK/Projeto-Mucuri-Template) |
+| Gerenciamento de tarefas            | GitHub Projects                    | Acessível no repositório                                                      |
+| Hospedagem do front-end             | Vercel                             | *(link será adicionado após o deploy)*                                        |
+| Hospedagem do back-end              | Microsoft Azure                    | *(link será adicionado após o deploy)*                                        |
