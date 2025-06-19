@@ -1,43 +1,61 @@
-# Modelagem dos processos de negócio
+# Modelagem dos Processos de Negócio
 
-<span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
+> 📎 Pré-requisitos: [Especificação do projeto](02-Especificacao.md)
 
 > **Links úteis**:
 > - [Modelagem de processos AS-IS x TO-BE](https://dheka.com.br/modelagem-as-is-to-be/)
 > - [20 dicas práticas de modelagem de processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
 
-## Modelagem da situação atual (Modelagem AS IS)
+---
 
-Apresente uma descrição textual de como os sistemas atuais resolvem o problema que seu projeto se propõe a resolver. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional.
+## 📌 Modelagem da Situação Atual (AS-IS)
 
-Com o tema do projeto definido, escolham alguns processos no contexto de negócios. Para ilustrar os potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho. Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
+Nesta etapa, apresentamos como os processos atualmente são executados pela instituição **Mucuri – Projeto Social**, antes da introdução do sistema proposto. A maioria das atividades é realizada de forma **manual**, sem automação digital. Entre os principais gargalos, destacam-se:
 
-## Descrição geral da proposta (Modelagem TO BE)
+- Captação de voluntários via conversas informais e formulários impressos.
+- Controle de doações feito em planilhas e anotações físicas.
+- Atualizações e divulgação de cursos feitas exclusivamente por redes sociais, com alcance limitado.
+- Ausência de banco de dados centralizado confiável.
+- Falta de relatórios automatizados para auxiliar na tomada de decisões.
 
-Tendo identificado os gargalos dos modelos AS-IS, apresentem uma descrição da proposta de solução, buscando maior eficiência com a introdução da tecnologia. Abordem também os limites dessa solução e seu alinhamento com as estratégias e objetivos do contexto de negócio escolhido.
+> ⚠️ Modelos AS-IS foram desenvolvidos utilizando notação BPMN e podem ser visualizados nos arquivos vinculados abaixo.
 
-Cole aqui os modelos da solução proposta (modelo TO-BE), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina. Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
+---
 
-Apresente aqui uma descrição da sua proposta, abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente também as oportunidades de melhoria.
+## 💡 Descrição Geral da Proposta (TO-BE)
 
-## Modelagem dos processos
+A proposta visa **digitalizar e automatizar os principais processos operacionais** da instituição por meio do desenvolvimento de:
 
-[PROCESSO 1 - Nome do processo](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
+- Um **site institucional** para divulgação e captação de apoio.
+- Um **painel administrativo** para gestão de voluntários, cursos, eventos e doações.
+- Um **banco de dados estruturado** com acesso seguro e persistente.
+- Relatórios gerenciais automatizados com indicadores de desempenho.
 
-[PROCESSO 2 - Nome do processo](./processes/processo-2-nome-do-processo.md "Detalhamento do processo 2.")
+Essas mudanças reduzem retrabalho, aumentam a organização interna e fortalecem a presença digital da instituição.
 
+> ⚠️ Modelos TO-BE elaborados com notação BPMN estão disponíveis abaixo.
 
-## Indicadores de desempenho
+---
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Coloque no mínimo 5 indicadores.
+## 🧩 Modelagem dos Processos
 
-Use o seguinte modelo:
+- [PROCESSO 1 - Captação de Voluntários](./processes/processo-1-capacitacao-voluntarios.md "Detalhamento do processo 1.")
+- [PROCESSO 2 - Registro de Doações](./processes/processo-2-registro-doacoes.md "Detalhamento do processo 2.")
 
-| **Indicador** | **Objetivos** | **Descrição** | **Fonte de dados** | **Fórmula de cálculo** |
-| ---           | ---           | ---           | ---             | ---             |
-| Percentual de reclamações | Avaliar quantitativamente as reclamações | Percentual de reclamações em relação ao total de atendimentos | Tabela Reclamações | número total de reclamações / número total de atendimentos |
-| Taxa de requisições atendidas | Melhorar a prestação de serviços medindo a porcentagem de requisições atendidas| Mede a % de requisições atendidas na semana | Tabela Solicitações | (número de requisições atendidas / número total de requisições) * 100 |
-| Taxa de entrega de material | Manter controle sobre os materiais que estão sendo entregues | Mede % de material entregue dentro do mês | Tabela Pedidos | (número de pedidos entregues / número total de pedidos) * 100 |
+> Outros processos podem ser adicionados conforme a ampliação do escopo da solução.
 
+---
 
-Obs.: todas as informações necessárias para gerar os indicadores devem estar no diagrama de classe a ser apresentado posteriormente.
+## 📊 Indicadores de Desempenho
+
+A seguir, apresentamos os principais indicadores de desempenho (KPIs) definidos para monitorar a eficácia dos processos automatizados no sistema.
+
+| **Indicador**                    | **Objetivo**                                                       | **Descrição**                                                    | **Fonte de Dados**       | **Fórmula de Cálculo**                                         |
+|----------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------|---------------------------|----------------------------------------------------------------|
+| Percentual de reclamações        | Avaliar quantitativamente a insatisfação dos usuários              | % de reclamações em relação ao total de atendimentos             | Tabela `Reclamacoes`      | número total de reclamações / número total de atendimentos     |
+| Taxa de requisições atendidas    | Medir a eficácia na resposta às solicitações dos usuários           | % de requisições atendidas em um determinado período             | Tabela `Solicitacoes`     | (requisicoes atendidas / total de requisições) * 100           |
+| Taxa de entrega de material      | Monitorar o desempenho logístico da instituição                     | % de materiais entregues corretamente dentro do prazo            | Tabela `Pedidos`          | (pedidos entregues / total de pedidos) * 100                   |
+| Taxa de participação em eventos  | Acompanhar engajamento da comunidade                                | % de inscritos que participaram efetivamente nos eventos         | Tabela `InscricoesEventos`| (participantes presentes / inscritos) * 100                    |
+| Crescimento de novos voluntários | Medir o crescimento do corpo voluntário                             | Número de novos cadastros em determinado período                 | Tabela `Usuarios`         | novos voluntários no mês atual - mês anterior                  |
+
+> ℹ️ Os dados acima devem estar representados no diagrama de classes, garantindo a consistência entre modelagem e implementação.
