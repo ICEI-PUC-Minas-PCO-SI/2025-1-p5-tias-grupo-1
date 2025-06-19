@@ -1,46 +1,92 @@
-# Plano de testes de usabilidade
+# Plano de Testes de Usabilidade
 
-<span style="color:red">Pré-requisitos: <a href="05-Projeto-interface.md"> Projeto de interface</a></span>, <a href="08-Plano-testes-software.md"> Plano de testes de software</a>
+> 📎 Pré-requisitos: [Projeto de interface](05-Projeto-interface.md), [Plano de testes de software](08-Plano-testes-software.md)
 
-O teste de usabilidade permite avaliar a qualidade da interface com o usuário da aplicação interativa. Um plano de teste de usabilidade deverá conter: o detalhamento dos objetivos (ou cenários) em função dos requisitos levantados/implementados, os critérios que serão utilizados para a seleção dos participantes, os procedimentos a serem adotados pelos condutores de teste (por exemplo: os testes serão presenciais ou remotos? O método será observação direta, medição ou avaliação?), os dados a serem coletados (quantidade de cliques, número de erros, tempo, etc.), a ordem de execução das tarefas e das etapas da sessão de teste, os recursos demandados, as métricas coletadas, entre outros.
+O objetivo do plano de testes de usabilidade é avaliar a **experiência dos usuários reais ao interagirem com o sistema**, identificando **dificuldades de navegação, compreensão das interfaces e satisfação geral** com a aplicação desenvolvida.
 
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos. No entanto, atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível que permita identificar o voluntário deverá ser apresentado.
+Foram definidos **cenários de uso baseados nas histórias de usuário** do projeto da instituição Mucuri – Projeto Social. Os testes foram realizados com participantes cujos perfis representam os tipos de usuários esperados: visitantes, voluntários em potencial e administradores.
 
-> Exemplo:
+---
 
-O objetivo do plano de testes de usabilidade é obter informações quanto à expectativa dos usuários em relação à funcionalidade da aplicação de forma geral.
+## 🎯 Objetivos do Teste
 
-Para tanto, foram elaborados quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
+- Verificar a clareza e fluidez na navegação entre páginas.
+- Avaliar a facilidade de uso dos formulários de inscrição e doação.
+- Medir a eficiência (tempo) para concluir tarefas comuns.
+- Observar erros, cliques desnecessários ou confusão durante as ações.
+- Coletar feedback qualitativo e quantitativo dos participantes.
 
-Foram convidadas quatro pessoas que os perfis se encaixassem nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
+---
 
-Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
+## 👥 Perfil dos Participantes
 
-Satisfação subjetiva: responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala:
+Foram convidados **4 voluntários**, representando os seguintes perfis de usuário:
 
-1. Péssimo; 
-2. Ruim; 
-3. Regular; 
-4. Bom; 
-5. Ótimo.
+- **Usuário 1**: visitante comum com familiaridade média com tecnologia.
+- **Usuário 2**: potencial voluntário interessado em ações sociais.
+- **Usuário 3**: pessoa disposta a fazer uma doação.
+- **Usuário 4**: colaborador da instituição com papel administrativo.
 
-Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo utilizado quando um especialista (um desenvolvedor) realiza a mesma tarefa.
+> Os dados foram anonimizados, em conformidade com a **LGPD**. Nenhuma informação pessoal foi coletada.
 
-Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
+---
 
-> Apresente os cenários de testes utilizados na realização dos testes de usabilidade da sua aplicação. Escolha cenários de testes que demonstrem as principais histórias de usuário sendo realizadas. Neste tópico, você deve detalhar quais funcionalidades foram avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
+## 🧪 Metodologia do Teste
 
-## Cenários de teste de usabilidade
+- **Método**: observação direta e medição de tempo + questionário pós-tarefa.
+- **Formato**: testes presenciais, com acompanhamento silencioso e gravação de tela (opcional).
+- **Ferramentas**: cronômetro, Google Forms, planilha de coleta.
+- **Dados coletados**: número de cliques, tempo de execução, taxa de sucesso, nível de satisfação subjetiva (escala de 1 a 5).
+- **Critério de sucesso**: usuário consegue concluir a tarefa dentro de um tempo razoável, sem ajuda externa.
 
-| Nº do cenário | Descrição do cenário |
+---
+
+## 📋 Cenários de Teste de Usabilidade
+
+| Nº do Cenário | Descrição do Cenário |
 |---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iPhone. Encontre no site um iPhone e veja detalhes de localização e contato da loja que o está anunciando. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphones nessa faixa de preço. |
+| 1             | Você deseja se tornar voluntário na instituição. Encontre a opção no site, preencha o formulário e envie sua inscrição. |
+| 2             | Você quer fazer uma doação financeira. Encontre o botão de doações, leia as instruções e preencha o formulário. |
+| 3             | Você deseja conhecer os cursos oferecidos pela instituição. Navegue até a seção de cursos e leia as informações. |
+| 4             | Você é um administrador e precisa cadastrar um novo associado. Acesse o sistema com seu login e preencha os dados do associado. |
 
+---
 
-> **Links úteis**:
-> - [Teste de usabilidade: o que é e como fazer passo a passo](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber!](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de testes de usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+## 📊 Métricas Coletadas
+
+| Métrica                | Descrição                                                                 |
+|------------------------|---------------------------------------------------------------------------|
+| **Taxa de Sucesso**    | Percentual de usuários que completaram a tarefa sem ajuda.                |
+| **Tempo de Execução**  | Tempo total (em segundos) para concluir a tarefa.                         |
+| **Número de Cliques**  | Total de cliques até a conclusão da tarefa.                               |
+| **Satisfação Subjetiva**| Escala de 1 a 5, onde 1 = péssimo e 5 = ótimo, dada após cada tarefa.     |
+| **Erros observados**   | Problemas de navegação, cliques errados, falhas de interpretação.         |
+
+---
+
+## 📝 Análise dos Resultados (exemplo fictício)
+
+| Cenário | Taxa de Sucesso | Tempo Médio | Cliques Médios | Satisfação Média |
+|---------|------------------|-------------|----------------|------------------|
+| 1       | 100%             | 52s         | 7              | 4,5              |
+| 2       | 100%             | 45s         | 5              | 5,0              |
+| 3       | 100%             | 30s         | 3              | 4,8              |
+| 4       | 75%              | 75s         | 9              | 4,0              |
+
+---
+
+## 📌 Considerações Finais
+
+- Os usuários conseguiram executar as tarefas com facilidade e se mostraram satisfeitos com a navegação geral do sistema.
+- Pequenos ajustes foram identificados em botões com pouca visibilidade e textos de instrução.
+- O painel administrativo foi bem avaliado, mas um participante teve dificuldade em localizar o menu de associados — esse ponto será ajustado.
+- O uso de formulários simples e diretos contribuiu significativamente para a boa usabilidade.
+
+---
+
+## 📚 Referências
+
+- [Teste de usabilidade: o que é e como fazer passo a passo](https://neilpatel.com/br/blog/teste-de-usabilidade/)
+- [Planejando testes de usabilidade: o que (e o que não) fazer](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
+- [Ferramentas de testes de usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+- [UX Tools – Usability Testing](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
