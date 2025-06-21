@@ -1,11 +1,9 @@
-// src/Home.js
 import React from 'react';
 import styles from './Home.module.css';
 
 function Home() {
   return (
     <div className={styles.homePage}>
-      {/* Seção 1: Banner Principal (Hero Section) */}
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <p className={styles.heroSubtitle}>TRANSFORMANDO EM REALIDADE</p>
@@ -14,24 +12,14 @@ function Home() {
           <button className={styles.heroButton}>Comece Agora</button>
         </div>
         <div className={styles.heroImages}>
-          <div className={styles.imageGrid}>
-            <div className={`${styles.imageWrapper} ${styles.blueBg}`}>
-              <img src="https://images.unsplash.com/photo-1594733306126-a07096d29990?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ2ODU1fA&ixlib=rb-4.0.3&q=80&w=400" alt="Estudante 1" className={styles.gridImage} />
-            </div>
-            <div className={`${styles.imageWrapper} ${styles.pinkBg}`}>
-              <img src="https://images.unsplash.com/photo-1627575294021-998edc4e4df9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ2OTY0fA&ixlib=rb-4.0.3&q=80&w=400" alt="Estudante 2" className={styles.gridImage} />
-            </div>
-            <div className={`${styles.imageWrapper} ${styles.yellowBg}`}>
-              <img src="https://images.unsplash.com/photo-1621570183141-b1e0f09b532c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3MDEwfA&ixlib=rb-4.0.3&q=80&w=400" alt="Estudante 3" className={styles.gridImage} />
-            </div>
-            <div className={`${styles.imageWrapper} ${styles.greenBg}`}>
-              <img src="https://images.unsplash.com/photo-1599304245781-a957d19ef8f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3MDQ0fA&ixlib=rb-4.0.3&q=80&w=400" alt="Estudante 4" className={styles.gridImage} />
-            </div>
-          </div>
+          <img
+            src="image_5.png" // MAKE SURE THIS PATH IS CORRECT. Place image_58dc07.jpg into public/images/ and rename it to hero-composite-students.png
+            alt="Estudantes felizes e engajados"
+            className={styles.singleHeroImage}
+          />
         </div>
       </section>
 
-      {/* Seção 2: Métricas/Números */}
       <section className={styles.metricsSection}>
         <div className={styles.metricItem}>
           <span className={styles.metricNumber}>XXX+</span>
@@ -51,7 +39,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Seção 3: Vantagens dos Nossos Segmentos */}
       <section className={styles.segmentsSection}>
         <p className={styles.sectionSubtitle}>CONHEÇA NOSSOS SEGMENTOS</p>
         <h2 className={styles.sectionTitle}>Vantagens dos Nossos Segmentos</h2>
@@ -79,10 +66,9 @@ function Home() {
         </div>
       </section>
 
-      {/* Seção 4: Educação que Transforma - Cursos Ofertados */}
       <section className={styles.coursesOfferedSection}>
         <div className={styles.coursesOfferedImageWrapper}>
-          <img src="https://images.unsplash.com/photo-1593642531955-b62e17b3bd04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3MTI5fA&ixlib=rb-4.0.3&q=80&w=600" alt="Estudante Feliz" className={styles.coursesOfferedImage} />
+          <img src="image_6.png" alt="Estudante Feliz" className={styles.coursesOfferedImage} />
         </div>
         <div className={styles.coursesOfferedContent}>
           <p className={styles.sectionSubtitle}>EDUCAÇÃO QUE TRANSFORMA</p>
@@ -94,7 +80,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Seção 5: Professores Qualificados */}
       <section className={styles.teachersSection}>
         <div className={styles.teachersContent}>
           <p className={styles.sectionSubtitle}>PROFESSORES QUALIFICADOS</p>
@@ -105,11 +90,10 @@ function Home() {
           <button className={styles.primaryButton}>Quero ver os cursos!</button>
         </div>
         <div className={styles.teachersImageWrapper}>
-          <img src="https://images.unsplash.com/photo-1552586708-8e6d97a9f8f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3MjM2fA&ixlib=rb-4.0.3&q=80&w=600" alt="Professores" className={styles.teachersImage} />
+          <img src="image_7.png" alt="Professores" className={styles.teachersImage} />
         </div>
       </section>
 
-      {/* Seção 6: Nossas Áreas de Ensino - Nossos Ensinos e Segmentos */}
       <section className={styles.areasOfStudySection}>
         <p className={styles.sectionSubtitle}>NOSSAS ÁREAS DE ENSINO</p>
         <h2 className={styles.sectionTitle}>Nossos Ensinos e Segmentos</h2>
@@ -149,14 +133,13 @@ function Home() {
         </div>
       </section>
 
-      {/* Seção 7: Nossos Depoimentos */}
       <section className={styles.testimonialsSection}>
         <p className={styles.sectionSubtitle}>NOSSOS DEPOIMENTOS</p>
         <h2 className={styles.sectionTitle}>O Que Nossos Alunos Dizem Sobre Nós</h2>
         <div className={styles.testimonialCards}>
           <div className={styles.testimonialCard}>
             <div className={styles.testimonialHeader}>
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3MzY2fA&ixlib=rb-4.0.3&q=80&w=200" alt="Derick" className={styles.testimonialAvatar} />
+              <img src="image_8.avif" alt="Derick" className={styles.testimonialAvatar} />
               <div className={styles.testimonialInfo}>
                 <h3>Derick</h3>
                 <p>Barros</p>
@@ -173,7 +156,7 @@ function Home() {
           </div>
           <div className={styles.testimonialCard}>
             <div className={styles.testimonialHeader}>
-              <img src="https://images.unsplash.com/photo-1547425260-76bc0fafa2d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3MzkwfA&ixlib=rb-4.0.3&q=80&w=200" alt="Vinicius" className={styles.testimonialAvatar} />
+              <img src="image_8.avif" alt="Vinicius" className={styles.testimonialAvatar} />
               <div className={styles.testimonialInfo}>
                 <h3>Vinicius</h3>
                 <p>Vinicius</p>
@@ -190,7 +173,7 @@ function Home() {
           </div>
           <div className={styles.testimonialCard}>
             <div className={styles.testimonialHeader}>
-              <img src="https://images.unsplash.com/photo-1620245084931-bd8132e01b38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzcxMjd8MHwxfGFsbHwxfHx8fHx8fHwxNzE4NzQ3NDI0fA&ixlib=rb-4.0.3&q=80&w=200" alt="Cristina" className={styles.testimonialAvatar} />
+              <img src="image_8.avif" alt="Cristina" className={styles.testimonialAvatar} />
               <div className={styles.testimonialInfo}>
                 <h3>Cristina</h3>
                 <p>Cristina</p>
