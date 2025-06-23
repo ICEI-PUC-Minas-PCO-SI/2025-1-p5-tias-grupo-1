@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="lado-esquerdo">
+    <div class="conteudo-lado-esquerdo">
+      <img src="assets/logo.jpg" alt="Projeto Social Mucuri" />
+      <h2>Projeto Social Mucuri</h2>
+    </div>
+  </div>
+  <div class="lado-direito">
+    <div class="form-container">
+      <h2>Área Administrativa</h2>
+
+      <form class="form-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="seuemail@exemplo.com"
+            formControlName="Email"
+            [ngClass]="{ 'invalid-input': loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) }">
+        </div>
+        
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          
+          <input
+            [type]="passwordFieldType"
+            id="senha"
+            placeholder="Senha"
+            formControlName="Senha"
+            [ngClass]="{ 'invalid-input': loginForm.get('Senha')?.invalid && (loginForm.get('Senha')?.dirty || loginForm.get('Senha')?.touched) }"
+          />
+
+          <span class="icon-wrapper" (click)="togglePasswordVisibility()">
+            <fa-icon
+              [icon]="passwordFieldType === 'password' ? 'eye' : 'eye-slash'"
+            ></fa-icon>
+          </span>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid || isLoading">
+          <span *ngIf="!isLoading">Entrar</span>
+          <span *ngIf="isLoading">Carregando...</span>
+        </button>
+        
+      </form>
+    </div>
+  </div>
+</div>

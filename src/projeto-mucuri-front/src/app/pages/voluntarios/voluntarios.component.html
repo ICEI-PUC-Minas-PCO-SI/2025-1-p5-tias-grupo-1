@@ -1,0 +1,95 @@
+<div class="page-container">
+  <header class="page-header">
+    <h2>Gerenciar Voluntários</h2>
+    <div class="toolbar">
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Pesquisar por nome, email, tipo..."
+          [(ngModel)]="searchTerm"
+          (input)="applyFilter()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+      </div>
+      <button class="btn btn-primary" (click)="adicionarVoluntario()">+ Adicionar Novo</button>
+    </div>
+  </header>
+
+  <!-- NOVO: Container de feedback -->
+  <div class="content-wrapper">
+
+    <!-- Estado de Carregamento -->
+    <div *ngIf="isLoading" class="feedback-message">
+      <p>Carregando voluntários...</p>
+    </div>
+
+    <!-- Estado de Erro -->
+    <div *ngIf="!isLoading && errorMessage" class="feedback-message error">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div *ngIf="!isLoading && !errorMessage">
+
+      <!-- Tabela Vazia -->
+      <div *ngIf="paginatedVoluntarios.length === 0" class="feedback-message">
+        <p>Nenhum voluntário encontrado para os critérios de busca.</p>
+      </div>
+      
+      <!-- Tabela de Dados -->
+      <div *ngIf="paginatedVoluntarios.length > 0" class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <!-- ALTERADO: Cabeçalhos da tabela -->
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Tipo de Voluntariado</th>
+              <th>Data de Início</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ALTERADO: Células da tabela usam os campos da API -->
+            <tr *ngFor="let voluntario of paginatedVoluntarios">
+              <td>{{ voluntario.nome }}</td>
+              <td>{{ voluntario.telefone }}</td>
+              <td>{{ voluntario.tipoVoluntariado }}</td>
+              <td>{{ voluntario.criadoEm | date:'dd/MM/yyyy' }}</td>
+              <td>
+                <a class="btn btn-details" [routerLink]="['/admin/voluntarios', voluntario.id]">Ver mais</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Paginação -->
+      <nav *ngIf="totalPages > 1" class="pagination-controls" aria-label="Navegação de página">
+        <button class="btn-pagination" (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+        
+        <button *ngFor="let page of pages"
+                class="btn-pagination page-number"
+                [class.active]="page === currentPage"
+                (click)="goToPage(page)">
+          {{ page }}
+        </button>
+
+        <button class="btn-pagination" (click)="nextPage()" [disabled]="currentPage === totalPages">Próximo</button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- O modal não foi alterado -->
+<app-modal 
+  *ngIf="isModalVisible" 
+  title="Adicionar Novo Voluntário" 
+  (close)="closeModal()">
+  
+  <form class="modal-form">
+    
+  </form>
+
+</app-modal>

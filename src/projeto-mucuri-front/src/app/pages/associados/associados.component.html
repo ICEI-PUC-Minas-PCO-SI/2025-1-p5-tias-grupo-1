@@ -1,0 +1,181 @@
+<div class="page-container">
+  <header class="page-header">
+    <h2>Gerenciar Associados</h2>
+    <div class="toolbar">
+      <div class="search-bar">
+        <!-- ALTERADO: Placeholder atualizado para refletir os novos campos de busca -->
+        <input type="text" 
+               placeholder="Pesquisar por nome, email ou atividade..."
+               [(ngModel)]="searchTerm"
+               (input)="applyFilter()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+      </div>
+      <button class="btn btn-primary" (click)="adicionarAssociado()">+ Adicionar Novo</button>
+    </div>
+  </header>
+
+  <!-- NOVO: Container para lidar com os estados de carregamento, erro e vazio -->
+  <div class="content-wrapper">
+
+    <!-- 1. Estado de Carregamento -->
+    <div *ngIf="isLoading" class="feedback-message">
+      <p>Carregando associados...</p>
+    </div>
+
+    <!-- 2. Estado de Erro -->
+    <div *ngIf="!isLoading && errorMessage" class="feedback-message error">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- 3. Conteúdo Principal (Tabela e Paginação) - só aparece se não estiver carregando e sem erros -->
+    <div *ngIf="!isLoading && !errorMessage">
+
+      <!-- Verificação de Tabela Vazia -->
+      <div *ngIf="paginatedAssociados.length === 0" class="feedback-message">
+        <p>Nenhum associado encontrado para os critérios de busca.</p>
+      </div>
+
+      <!-- Tabela de Dados (só aparece se houver resultados) -->
+      <div *ngIf="paginatedAssociados.length > 0" class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <!-- ALTERADO: Cabeçalhos da tabela refletem os novos dados -->
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>Atividade Principal</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ALTERADO: Células da tabela agora usam os campos da API -->
+            <tr *ngFor="let associado of paginatedAssociados">
+              <td>{{ associado.nome }}</td>
+              <td>{{ associado.email }}</td>
+              <td>{{ associado.telefone}} </td>
+              <td>{{ associado.descricaoAtividade }}</td>
+              <td>
+                <!-- O botão "Ver mais" continua funcionando como antes -->
+                <a class="btn btn-details" [routerLink]="['/admin/associados', associado.id]">Ver mais</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Paginação só aparece se houver mais de uma página -->
+      <nav *ngIf="totalPages > 1" class="pagination-controls" aria-label="Navegação de página">
+        <button class="btn-pagination" (click)="prevPage()" [disabled]="currentPage === 1">
+          Anterior
+        </button>
+        <button *ngFor="let page of pages" 
+                class="btn-pagination page-number"
+                [class.active]="page === currentPage"
+                (click)="goToPage(page)">
+          {{ page }}
+        </button>
+        <button class="btn-pagination" (click)="nextPage()" [disabled]="currentPage === totalPages">
+          Próximo
+        </button>
+      </nav>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- O modal não foi alterado, pois a lógica de ADICIONAR um novo associado é um passo futuro -->
+<app-modal 
+  *ngIf="isModalVisible" 
+  title="Adicionar Novo Associado" 
+  (close)="closeModal()">
+  
+  <!-- O formulário agora é reativo e chama onSaveAssociado -->
+  <form class="modal-form" [formGroup]="newAssociadoForm" (ngSubmit)="onSaveAssociado()">
+
+    <!-- Grid para organizar o formulário -->
+    <div class="form-grid">
+      
+      <!-- Campos do formulário com validação -->
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" formControlName="nome" class="form-control">
+        <div *ngIf="newAssociadoForm.get('nome')?.invalid && newAssociadoForm.get('nome')?.touched" class="error-text">Nome é obrigatório.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" formControlName="email" class="form-control">
+        <div *ngIf="newAssociadoForm.get('email')?.invalid && newAssociadoForm.get('email')?.touched" class="error-text">Forneça um e-mail válido.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" formControlName="telefone" class="form-control">
+         <div *ngIf="newAssociadoForm.get('telefone')?.invalid && newAssociadoForm.get('telefone')?.touched" class="error-text">Telefone é obrigatório.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="dataNascimento">Data de Nascimento</label>
+        <input type="date" id="dataNascimento" formControlName="dataNascimento" class="form-control">
+         <div *ngIf="newAssociadoForm.get('dataNascimento')?.invalid && newAssociadoForm.get('dataNascimento')?.touched" class="error-text">Data de nascimento é obrigatória.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="documento">Documento (CPF)</label>
+        <input type="text" id="documento" formControlName="documento" class="form-control">
+        <div *ngIf="newAssociadoForm.get('documento')?.invalid && newAssociadoForm.get('documento')?.touched" class="error-text">Documento é obrigatório.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" formControlName="cep" class="form-control">
+        <div *ngIf="newAssociadoForm.get('cep')?.invalid && newAssociadoForm.get('cep')?.touched" class="error-text">CEP é obrigatório.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="rua">Rua</label>
+        <input type="text" id="rua" formControlName="rua" class="form-control">
+        <div *ngIf="newAssociadoForm.get('rua')?.invalid && newAssociadoForm.get('rua')?.touched" class="error-text">Rua é obrigatória.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" formControlName="bairro" class="form-control">
+        <div *ngIf="newAssociadoForm.get('bairro')?.invalid && newAssociadoForm.get('bairro')?.touched" class="error-text">Bairro é obrigatório.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="numero">Número</label>
+        <input type="text" id="numero" formControlName="numero" class="form-control">
+        <div *ngIf="newAssociadoForm.get('numero')?.invalid && newAssociadoForm.get('numero')?.touched" class="error-text">Número é obrigatório.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" formControlName="complemento" class="form-control">
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="descricaoAtividade">Descrição da Atividade</label>
+        <textarea id="descricaoAtividade" formControlName="descricaoAtividade" class="form-control"></textarea>
+        <div *ngIf="newAssociadoForm.get('descricaoAtividade')?.invalid && newAssociadoForm.get('descricaoAtividade')?.touched" class="error-text">Descrição da atividade é obrigatória.</div>
+      </div>
+
+    </div> <!-- Fim do form-grid -->
+
+    <!-- Mensagens de feedback de sucesso ou erro -->
+    <div *ngIf="formSubmitMessage" [ngClass]="{'success-message': formSubmitStatus === 'success', 'error-message': formSubmitStatus === 'error'}">
+      {{ formSubmitMessage }}
+    </div>
+
+    <!-- Ações do formulário -->
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+      <button type="button" class="btn btn-primary" (click)="onSaveAssociado()">Salvar Associado</button>
+    </div>
+  </form>
+</app-modal>

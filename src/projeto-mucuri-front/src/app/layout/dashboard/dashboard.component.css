@@ -1,0 +1,117 @@
+/* CÓDIGO ATUALIZADO PARA: src/app/layout/dashboard/dashboard.component.css */
+
+/* -- Variáveis de Cores (CSS Custom Properties) -- */
+:host {
+  /* --- CORES ATUALIZADAS --- */
+  --sidebar-bg: #327200;                  /* Cor principal que você pediu */
+  --sidebar-text: #ffffff;                  /* Texto branco para alto contraste com o verde */
+  --sidebar-link-hover: rgba(255, 255, 255, 0.103);  /* Efeito de sobreposição escura para o hover */
+  --sidebar-link-active: #255400;         /* Um tom de verde mais escuro para o link ativo */
+  
+  /* --- COR DO CONTEÚDO (Pode ser mantida) --- */
+  --content-bg: #f4f6f9;
+}
+
+/* -- Estrutura Principal com Flexbox -- */
+.dashboard-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* -- Estilos da Barra Lateral -- */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+/* -- Cabeçalho da Sidebar (Logo e Título) -- */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-header img {
+  height: 40px;
+  margin-right: 16px;
+  /* Filtro para deixar o logo branco (opcional, mas recomendado para logos escuros) */
+  /* filter: brightness(0) invert(1); */
+}
+
+.sidebar-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* -- Navegação Principal -- */
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.sidebar-nav li a:hover {
+  background-color: var(--sidebar-link-hover);
+  border-left: 2px solid #FFF;
+}
+
+.sidebar-nav li a.active-link  {
+  background-color: var(--sidebar-link-hover);
+  border-left: 2px solid #FFF;
+}
+
+/* -- Footer da Sidebar (Perfil e Sair) -- */
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.616); /* Borda superior mais sutil */
+  padding-top: 16px;
+}
+
+.sidebar-footer a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar-footer a:hover {
+  background-color: var(--sidebar-link-hover);
+}
+
+.sidebar-footer a.active-link {
+    background-color: var(--sidebar-link-active);
+    color: white;
+}
+
+.sidebar-footer a:not([routerLink]) {
+  cursor: pointer;
+}
+
+/* -- Área de Conteúdo Principal -- */
+.content-area {
+  flex: 1;
+  background-color: var(--content-bg);
+  padding: 40px;
+  overflow-y: auto;
+}

@@ -1,0 +1,149 @@
+<div class="page-container">
+  <header class="page-header">
+    <h2>Gerenciar Doações</h2>
+    <div class="toolbar">
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Pesquisar por doador, valor, data..."
+          [(ngModel)]="searchTerm"
+          (input)="applyFilter()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+      </div>
+      <button class="btn btn-primary" (click)="adicionarDoacao()">+ Adicionar Nova</button>
+    </div>
+  </header>
+
+  <!-- NOVO: Container para lidar com os estados de carregamento, erro e vazio -->
+  <div class="content-wrapper">
+
+    <!-- 1. Estado de Carregamento -->
+    <div *ngIf="isLoading" class="feedback-message">
+      <p>Carregando doações...</p>
+    </div>
+
+    <!-- 2. Estado de Erro -->
+    <div *ngIf="!isLoading && errorMessage" class="feedback-message error">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- 3. Conteúdo Principal (só aparece se não estiver carregando e sem erros) -->
+    <div *ngIf="!isLoading && !errorMessage">
+
+      <!-- Mensagem de Tabela Vazia -->
+      <div *ngIf="paginatedDoacoes.length === 0" class="feedback-message">
+        <p>Nenhuma doação encontrada para os critérios de busca.</p>
+      </div>
+      
+      <!-- Tabela de Dados (só aparece se houver resultados) -->
+      <div *ngIf="paginatedDoacoes.length > 0" class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <!-- ALTERADO: Cabeçalhos da tabela refletem os novos dados -->
+              <th>Nome do Doador</th>
+              <th>Valor</th>
+              <th>Descrição</th>
+              <th>Data</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ALTERADO: Células da tabela usam os campos da API e pipes do Angular -->
+            <tr *ngFor="let doacao of paginatedDoacoes">
+              <td>{{ doacao.voluntario.nome }}</td>
+              <td>{{ doacao.valor | currency:'BRL':'symbol':'1.2-2' }}</td>
+              <td>{{ doacao.descricao }}</td>
+              <td>{{ doacao.data | date:'dd/MM/yyyy' }}</td>
+              <td>
+                <a class="btn btn-details" [routerLink]="['/admin/doacoes', doacao.id]">Ver mais</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Paginação (só aparece se houver mais de uma página) -->
+      <nav *ngIf="totalPages > 1" class="pagination-controls" aria-label="Navegação de página">
+        <button class="btn-pagination" (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+        
+        <button *ngFor="let page of pages"
+                class="btn-pagination page-number"
+                [class.active]="page === currentPage"
+                (click)="goToPage(page)">
+          {{ page }}
+        </button>
+
+        <button class="btn-pagination" (click)="nextPage()" [disabled]="currentPage === totalPages">Próximo</button>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+<app-modal 
+  *ngIf="isModalVisible" 
+  title="Adicionar Nova Doação" 
+  (close)="closeModal()">
+  
+  <form class="modal-form" [formGroup]="newDoacaoForm">
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="nomeDoador">Nome do Doador</label>
+        <input type="text" id="nomeDoador" formControlName="nomeDoador" class="form-control">
+        <div *ngIf="newDoacaoForm.get('nomeDoador')?.invalid && newDoacaoForm.get('nomeDoador')?.touched" class="error-text">Nome é obrigatório.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="emailDoador">E-mail do Doador</label>
+        <input type="email" id="emailDoador" formControlName="emailDoador" class="form-control">
+        <div *ngIf="newDoacaoForm.get('emailDoador')?.invalid && newDoacaoForm.get('emailDoador')?.touched" class="error-text">Forneça um e-mail válido.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="documentoDoador">Documento do Doador</label>
+        <input type="text" id="documentoDoador" formControlName="documentoDoador" class="form-control">
+        <div *ngIf="newDoacaoForm.get('documentoDoador')?.invalid && newDoacaoForm.get('documentoDoador')?.touched" class="error-text">Documento é obrigatório.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="telefoneDoador">Telefone do Doador</label>
+        <input type="text" id="telefoneDoador" formControlName="telefoneDoador" class="form-control">
+        <div *ngIf="newDoacaoForm.get('telefoneDoador')?.invalid && newDoacaoForm.get('telefoneDoador')?.touched" class="error-text">Telefone é obrigatório.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="valor">Valor (R$)</label>
+        <input type="number" id="valor" formControlName="valor" class="form-control">
+        <div *ngIf="newDoacaoForm.get('valor')?.invalid && newDoacaoForm.get('valor')?.touched" class="error-text">Valor deve ser maior que zero.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="data">Data da Doação</label>
+        <input type="date" id="data" formControlName="data" class="form-control">
+        <div *ngIf="newDoacaoForm.get('data')?.invalid && newDoacaoForm.get('data')?.touched" class="error-text">Data é obrigatória.</div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" formControlName="descricao" class="form-control"></textarea>
+        <div *ngIf="newDoacaoForm.get('descricao')?.invalid && newDoacaoForm.get('descricao')?.touched" class="error-text">Descrição é obrigatória.</div>
+      </div>
+
+    </div>
+
+    <!-- Mensagens de feedback -->
+    <div *ngIf="formSubmitMessage" [ngClass]="{'success-message': formSubmitStatus === 'success', 'error-message': formSubmitStatus === 'error'}">
+      {{ formSubmitMessage }}
+    </div>
+
+    <!-- Ações do formulário -->
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+      <button type="button" class="btn btn-primary" (click)="onSaveDoacao()">Salvar Doação</button>
+    </div>
+  </form>
+</app-modal>
