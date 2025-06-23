@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from './Sobre.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function Sobre() {
+
+  const navigate = useNavigate(); 
+  
+    const handleClick = () => {
+      navigate('/impacto-social'); 
+    };
+
   return (
     <div className={styles.sobrePage}>
       <section className={styles.sobreHeroSection}>
@@ -74,7 +82,7 @@ function Sobre() {
         <p className={styles.ctaDescription}>
           Sua contribuição pode ajudar a levar mais projetos como esses para quem mais precisa. Junte-se a nós e faça a diferença!
         </p>
-        <button className={styles.ctaButton}>Doe Agora</button>
+        <button className={styles.ctaButton} onClick={handleClick}>Doe Agora</button>
       </section>
     </div>
   );

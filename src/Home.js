@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function Home() {
+  const navigate = useNavigate(); 
+
+  const handleClick = () => {
+    navigate('/segmentos'); 
+  };
   return (
     <div className={styles.homePage}>
       <section className={styles.heroSection}>
@@ -9,7 +16,9 @@ function Home() {
           <p className={styles.heroSubtitle}>TRANSFORMANDO EM REALIDADE</p>
           <h1 className={styles.heroTitle}>Educação criativa e inovadora</h1>
           <p className={styles.heroDescription}>O Projeto Mucuri nasceu para transformar a vida das pessoas.</p>
-          <button className={styles.heroButton}>Comece Agora</button>
+          <button className={styles.heroButton} onClick={handleClick}>
+            Comece Agora
+          </button>
         </div>
         <div className={styles.heroImages}>
           <img
@@ -76,7 +85,9 @@ function Home() {
           <p className={styles.coursesOfferedDescription}>
             Oferecemos cursos com professores qualificados e uma metodologia inovadora, garantimos que você nunca perca uma aula e consiga acompanhar seu progresso de forma eficiente.
           </p>
-          <button className={styles.primaryButton}>Quero ver os cursos!</button>
+          <button className={styles.heroButton} onClick={handleClick}>
+            Quero ver os cursos!
+          </button>
         </div>
       </section>
 
@@ -87,7 +98,9 @@ function Home() {
           <p className={styles.teachersDescription}>
             Nossa equipe de professores é formada por profissionais experientes e dedicados, prontos para oferecer o suporte que você precisa.
           </p>
-          <button className={styles.primaryButton}>Quero ver os cursos!</button>
+          <button className={styles.heroButton} onClick={handleClick}>
+            Quero ver os cursos!
+          </button>
         </div>
         <div className={styles.teachersImageWrapper}>
           <img src="image_7.png" alt="Professores" className={styles.teachersImage} />

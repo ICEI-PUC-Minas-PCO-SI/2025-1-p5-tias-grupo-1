@@ -89,3 +89,58 @@
 .btn-doar:hover {
   background-color: #e6c700;
 }
+
+.formulario-doacao {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.formulario-doacao h3 {
+  margin-bottom: 15px;
+}
+
+.formulario-doacao form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-doacao label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.formulario-doacao input,
+.formulario-doacao textarea {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.botoes-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-enviar {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

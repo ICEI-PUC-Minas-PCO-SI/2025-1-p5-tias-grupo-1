@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Doacao.css';
 
 function Doacao() {
+
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [tipoDoacao, setTipoDoacao] = useState('');
+
+  const abrirFormulario = (tipo) => {
+    setTipoDoacao(tipo);
+    setMostrarFormulario(true);
+  };
+
+  const fecharFormulario = () => {
+    setMostrarFormulario(false);
+    setTipoDoacao('');
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Obrigado pela doação!');
+    // Aqui você pode enviar os dados para o backend se quiser
+    fecharFormulario();
+  };
+
   return (
     <div className="doacao-container">
       <section className="texto-principal">
@@ -22,7 +43,7 @@ function Doacao() {
         </p>
       </section>
 
-      <section className="doe-agora">
+     <section className="doe-agora">
         <h2>DOE AGORA</h2>
         <div className="cards">
           <div className="card">
@@ -30,16 +51,47 @@ function Doacao() {
               <i className="fas fa-heart"></i>
             </div>
             <h3>Quero doar alimentos ou itens</h3>
-            <button className="btn-doar">Doe Agora</button>
+            <button className="btn-doar" onClick={() => abrirFormulario('itens')}>Doe Agora</button>
           </div>
           <div className="card">
             <div className="icon">
               <i className="fas fa-hand-holding-usd"></i>
             </div>
             <h3>Quero doar um valor em dinheiro</h3>
-            <button className="btn-doar">Doe Agora</button>
+            <button className="btn-doar" onClick={() => abrirFormulario('dinheiro')}>Doe Agora</button>
           </div>
         </div>
+
+        {mostrarFormulario && (
+          <div className="formulario-doacao">
+            <h3>Formulário de Doação ({tipoDoacao === 'itens' ? 'Alimentos/Itens' : 'Dinheiro'})</h3>
+            <form onSubmit={handleSubmit}>
+              <label>
+                Nome:
+                <input type="text" required />
+              </label>
+              <label>
+                E-mail:
+                <input type="email" required />
+              </label>
+              {tipoDoacao === 'dinheiro' ? (
+                <label>
+                  Valor da doação (R$):
+                  <input type="number" required />
+                </label>
+              ) : (
+                <label>
+                  Descreva o que deseja doar:
+                  <textarea required />
+                </label>
+              )}
+              <div className="botoes-form">
+                <button type="submit" className="btn-enviar">Enviar</button>
+                <button type="button" className="btn-cancelar" onClick={fecharFormulario}>Cancelar</button>
+              </div>
+            </form>
+          </div>
+        )}
       </section>
     </div>
   );
