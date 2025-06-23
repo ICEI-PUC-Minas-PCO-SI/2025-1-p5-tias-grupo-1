@@ -37,43 +37,63 @@ Insira aqui o script de criação das tabelas do banco de dados.
 
 Veja um exemplo:
 
-```sql
--- Criação da tabela Medico
-CREATE TABLE Medico (
-    MedCodigo INTEGER PRIMARY KEY,
-    MedNome VARCHAR(100)
+```sql server
+CREATE DATABASE mucuri;
+
+
+USE mucuri;
+
+
+CREATE TABLE Usuario (
+    id_usuario INT PRIMARY KEY IDENTITY(1,1),
+    Email VARCHAR(100),
+    nome VARCHAR(100),
+    telefone VARCHAR(15),
+    cpf VARCHAR(12),
+    perfil INT
 );
 
--- Criação da tabela Paciente
-CREATE TABLE Paciente (
-    PacCodigo INTEGER PRIMARY KEY,
-    PacNome VARCHAR(100)
+
+CREATE TABLE Curso (
+    id_curso INT PRIMARY KEY IDENTITY(1,1),
+    nome VARCHAR(100),
+    [desc] VARCHAR(300)
 );
 
--- Criação da tabela Consulta
-CREATE TABLE Consulta (
-    ConCodigo INTEGER PRIMARY KEY,
-    MedCodigo INTEGER,
-    PacCodigo INTEGER,
-    Data DATE,
-    FOREIGN KEY (MedCodigo) REFERENCES Medico(MedCodigo),
-    FOREIGN KEY (PacCodigo) REFERENCES Paciente(PacCodigo)
+
+CREATE TABLE associado (
+    id_associado INT PRIMARY KEY IDENTITY(1,1),
+    id_curso INT,
+    id_usuario INT,
+    FOREIGN KEY (id_curso) REFERENCES Curso(id_curso),
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
 );
 
--- Criação da tabela Medicamento
-CREATE TABLE Medicamento (
-    MdcCodigo INTEGER PRIMARY KEY,
-    MdcNome VARCHAR(100)
+
+CREATE TABLE voluntario (
+    id_inscricao INT PRIMARY KEY IDENTITY(1,1),
+    id_usuario INT,
+    tipoVoluntario VARCHAR(100),
+    data DATE,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
 );
 
--- Criação da tabela Prescricao
-CREATE TABLE Prescricao (
-    ConCodigo INTEGER,
-    MdcCodigo INTEGER,
-    Posologia VARCHAR(200),
-    PRIMARY KEY (ConCodigo, MdcCodigo),
-    FOREIGN KEY (ConCodigo) REFERENCES Consulta(ConCodigo),
-    FOREIGN KEY (MdcCodigo) REFERENCES Medicamento(MdcCodigo)
+
+CREATE TABLE doacao (
+    id_doacao INT PRIMARY KEY IDENTITY(1,1),
+    valor FLOAT,
+    [desc] VARCHAR(300),
+    data DATE,
+    item VARCHAR(100)
+);
+
+
+CREATE TABLE Login (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    id_usuario INT,
+    email VARCHAR(100),
+    senha VARCHAR(40),
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
 );
 ```
 Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](../src/db).
