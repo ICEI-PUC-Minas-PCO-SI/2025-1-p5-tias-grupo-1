@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ProjetoMucuri.API.props" />
+</Project>
