@@ -1,0 +1,313 @@
+/* src/Sobre.module.css */
+
+:root {
+  --blue-metrics: #0063FF;
+  --yellow-button: #ffeb3b;
+  --yellow-destaque: #FEF73F;
+  --dark-text: #263238;
+  --medium-text: #455a64;
+  --light-text-gray: #8c8c8c;
+  --card-bg-blue-light: #e3f2fd;
+  --section-bg-light: #f7f9fc;
+  --metrics-section-bg: #f0f2f5; /* Nova cor de fundo para a seção de métricas */
+}
+
+.sobrePage {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.sobreHeroSection {
+  background-color: var(--section-bg-light);
+  padding: 80px 20px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+.sobreHeroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sobreHeroSubtitle {
+  font-size: 0.9em;
+  color: #2C7A4C;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.sobreHeroTitle {
+  font-size: 3.2em;
+  color: var(--dark-text);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.highlightText {
+  color: var(--yellow-destaque);
+}
+
+.sobreHeroDescription {
+  font-size: 1.1em;
+  color: var(--medium-text);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.metricsSection {
+  background-color: var(--metrics-section-bg); /* Aplicando o novo background aqui */
+  color: var(--dark-text);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.metricsTitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--dark-text);
+}
+
+.metricsGrid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.metricItem {
+  flex: 1;
+  min-width: 150px;
+  max-width: 22%;
+  text-align: center;
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.metricIcon {
+  font-size: 2em;
+  color: var(--yellow-destaque);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.metricNumber {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--dark-text);
+  margin-bottom: 5px;
+}
+
+.metricText {
+  font-size: 0.9em;
+  color: var(--medium-text);
+  opacity: 0.8;
+}
+
+.testimonialsSection {
+  background-color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonialsMainTitle {
+  font-size: 2.5em;
+  color: var(--dark-text);
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.testimonialsGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.testimonialCard {
+  background-color: var(--card-bg-blue-light);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonialQuote {
+  font-size: 1.1em;
+  color: var(--dark-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  font-size: 0.95em;
+  color: var(--medium-text);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.ctaSection {
+  background-color: var(--blue-metrics);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.ctaDescription {
+  font-size: 1.2em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  opacity: 0.9;
+}
+
+.ctaButton {
+  background-color: var(--yellow-button);
+  color: var(--dark-text);
+  padding: 15px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #fdd835;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+  .sobreHeroTitle {
+    font-size: 2.5em;
+  }
+  .sobreHeroDescription {
+    font-size: 1em;
+  }
+  .metricsTitle {
+    font-size: 2.2em;
+  }
+  .metricsGrid {
+    gap: 20px;
+  }
+  .metricItem {
+    max-width: 45%;
+    min-width: auto;
+    padding: 20px 15px;
+  }
+  .metricIcon {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  .metricNumber {
+    font-size: 1.8em;
+  }
+  .metricText {
+    font-size: 0.85em;
+  }
+  .testimonialsMainTitle {
+    font-size: 2.2em;
+  }
+  .testimonialCard {
+    width: 90%;
+    max-width: 400px;
+  }
+  .ctaTitle {
+    font-size: 2.5em;
+  }
+  .ctaDescription {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobreHeroSection, .metricsSection, .testimonialsSection, .ctaSection {
+    padding: 60px 15px;
+  }
+  .sobreHeroTitle {
+    font-size: 2em;
+  }
+  .metricsTitle {
+    font-size: 2em;
+  }
+  .metricsGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .metricItem {
+    max-width: 90%;
+  }
+  .testimonialsMainTitle {
+    font-size: 2em;
+  }
+  .ctaTitle {
+    font-size: 2em;
+  }
+  .ctaButton {
+    padding: 12px 30px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobreHeroTitle {
+    font-size: 1.8em;
+  }
+  .sobreHeroSubtitle {
+    font-size: 0.8em;
+  }
+  .metricsTitle {
+    font-size: 1.8em;
+  }
+  .metricIcon {
+    font-size: 1.5em;
+  }
+  .metricNumber {
+    font-size: 1.5em;
+  }
+  .metricText {
+    font-size: 0.8em;
+  }
+  .testimonialsMainTitle {
+    font-size: 1.8em;
+  }
+  .testimonialQuote {
+    font-size: 0.95em;
+  }
+  .ctaTitle {
+    font-size: 1.8em;
+  }
+}
