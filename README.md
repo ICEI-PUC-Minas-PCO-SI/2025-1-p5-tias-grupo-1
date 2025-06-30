@@ -24,7 +24,9 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 ## Instruções de utilização
 
 Para rodar o projeto deve se ter o angular, react, e sqlserver instalado em sua maquina, na pasta src, rode os seguintes comandos para iniciar os servicos 
+
 Angular pagina administrativa - ng serve e com o banco de dados rodando localmente
+
 react pagina de visitantes - npm install, npm start
 
 
